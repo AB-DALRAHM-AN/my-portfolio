@@ -22,13 +22,19 @@ export function NavLinks() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={`${pathname === '/' ? "bg-accent" : "bg-transparent"} ${navigationMenuTriggerStyle()}`}>
+            <NavigationMenuLink
+              className={cn("text-base", navigationMenuTriggerStyle(), pathname === "/" && "bg-accent")}
+            >
               Home
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={`${pathname === '/projects' ? "bg-accent" : "bg-transparent"}`}>Projects</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={cn("text-base", pathname === "/projects" && "bg-accent")}
+          >
+            Projects
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[250px] lg:grid-row-[.75fr_1fr] border-b">
               <ListItem href="/docs" title="Introduction">
@@ -37,10 +43,7 @@ export function NavLinks() {
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Typography"
-              >
+              <ListItem href="/docs/primitives/typography" title="Typography">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>
@@ -50,7 +53,11 @@ export function NavLinks() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={`${pathname === '/blog' ? "bg-accent" : "bg-transparent"}`}>Blog</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={cn("text-base", pathname === "/blog" && "bg-accent")}
+          >
+            Blog
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[250px] lg:grid-row-[.75fr_1fr] border-b">
               <ListItem href="/docs" title="Introduction">
@@ -59,10 +66,7 @@ export function NavLinks() {
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Typography"
-              >
+              <ListItem href="/docs/primitives/typography" title="Typography">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>

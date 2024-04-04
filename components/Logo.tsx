@@ -6,7 +6,6 @@ export const Logo = () => {
   return (
     <div className="md:text-3xl sm:text-2xl text-xl font-bold flex">
       <p className={gray}>{"{"}</p>
-      <p>
         <Typewriter
           options={{
             strings: ["A.A.A"],
@@ -16,7 +15,6 @@ export const Logo = () => {
             deleteSpeed: 150,
           }}
         />
-      </p>
       <p className={gray}>{"}"}</p>
     </div>
   );
