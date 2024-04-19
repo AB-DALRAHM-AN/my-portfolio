@@ -1,6 +1,3 @@
-// "use client";
-
-import React from "react";
 import { ModeToggle } from "./ModeToogle";
 import { NavLinks } from "./NavLinks";
 import { UserNav } from "./UserNav";

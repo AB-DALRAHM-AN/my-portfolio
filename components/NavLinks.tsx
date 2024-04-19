@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { ProjectsData } from "@/data/projects";
 
 import { cn } from "@/lib/utils";
 import {
@@ -13,7 +14,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 
 export function NavLinks() {
   const pathname = usePathname();
@@ -23,7 +24,11 @@ export function NavLinks() {
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
-              className={cn("text-base", navigationMenuTriggerStyle(), pathname === "/" && "bg-accent")}
+              className={cn(
+                "text-base bg-transparent",
+                navigationMenuTriggerStyle(),
+                pathname === "/" && "bg-accent"
+              )}
             >
               Home
             </NavigationMenuLink>
@@ -31,20 +36,26 @@ export function NavLinks() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger
-            className={cn("text-base", pathname === "/projects" && "bg-accent")}
+            className={cn(
+              "text-base bg-transparent",
+              pathname === "/projects" && "bg-accent"
+            )}
           >
             Projects
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[250px] lg:grid-row-[.75fr_1fr] border-b">
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/projects" title={ProjectsData[0].title}>
+                {ProjectsData[0].description}
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
+              <ListItem href="/projects" title={ProjectsData[1].title}>
+                {ProjectsData[1].description}
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem
+                href="/projects"
+                title={ProjectsData[2].title}
+              >
+                {ProjectsData[2].description}
               </ListItem>
             </ul>
             <ul className="px-6 py-2">
@@ -54,7 +65,10 @@ export function NavLinks() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger
-            className={cn("text-base", pathname === "/blog" && "bg-accent")}
+            className={cn(
+              "text-base bg-transparent",
+              pathname === "/blog" && "bg-accent"
+            )}
           >
             Blog
           </NavigationMenuTrigger>
