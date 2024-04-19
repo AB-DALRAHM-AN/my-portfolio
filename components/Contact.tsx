@@ -40,7 +40,7 @@ export default function ContactUsForm() {
       if (response.ok) {
         toast({
           title: "Successfully sent! 🚀",
-          description: "Check your email.",
+          description: "Thank you for reaching out to me. I will get back to you soon",
           action: <ToastAction altText="Ok">Ok</ToastAction>,
         });
 
