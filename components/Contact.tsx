@@ -42,7 +42,7 @@ export default function ContactUsForm() {
         toast({
           title: "Successfully sent! 🚀",
           description:
-            "Thank you for reaching out to me. I will get back to you soon",
+            "Thank you for reaching out. Check your email",
           action: <ToastAction altText="Ok">Ok</ToastAction>,
         });
       } else {
