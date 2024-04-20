@@ -52,7 +52,7 @@ export function UserNav() {
           ))}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem className="flex justify-center ">
           <ModeToggle />
         </DropdownMenuItem>
       </DropdownMenuContent>

@@ -37,14 +37,14 @@ export default function ContactUsForm() {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
+        reset();
         toast({
           title: "Successfully sent! 🚀",
-          description: "Thank you for reaching out to me. I will get back to you soon",
+          description:
+            "Thank you for reaching out to me. I will get back to you soon",
           action: <ToastAction altText="Ok">Ok</ToastAction>,
         });
-
-        reset();
       } else {
         throw new Error("Failed to send message.");
       }
