@@ -61,7 +61,7 @@ export const YelpRecentLoginEmail = ({ name }: YelpRecentLoginEmailProps) => {
                 <a href="https://abdalrahman.tech">
                   <p style={{ textDecoration: "none" }}>
                     <Button style={button}>Visit my website</Button>
-                  </p>
+                  </span>
                 </a>
               </Column>
             </Row>

@@ -11,14 +11,14 @@ export async function POST(req: NextRequest) {
     const { name, email, message } = body;
 
     const data = await resend.emails.send({
-      from: "A.A.A - <abdo@abdalrahman.tech>",
+      from: "A.A.A  <abdo@abdalrahman.tech>",
       to: [`${process.env.NEXT_PUBLIC_RESEND_TO_EMAIL}`],
       subject: `Message from your Portfolio.`,
       react: EmailForMe({ name, email, message }),
     });
 
     await resend.emails.send({
-      from: "A.A.A - <abdo@abdalrahman.tech>",
+      from: "A.A.A  <abdo@abdalrahman.tech>",
       to: [`${email}`],
       subject: `Abdalrahman From HireQ`,
       react: MessageUsEmail({ name }),

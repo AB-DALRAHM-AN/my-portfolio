@@ -26,9 +26,9 @@ const Hero = () => {
           height={150}
           className="absolute z-0 dark:invert-[0.2] invert-[0.8] hidden md:block top-[-25px] left-[-40px]"
         />
-        <p className="md:text-3xl text-2xl font-semibold text-primary z-10">
+        <span className="md:text-3xl text-2xl font-semibold text-primary z-10">
           Hey there!, {"I'm-"}
-        </p>
+        </span>
         <h1
           className={cn(
             "md:text-9xl text-7xl font-[700] z-10",
@@ -39,14 +39,14 @@ const Hero = () => {
         </h1>
       </div>
       <div className="md:text-3xl text-2xl font-bold text-muted-foreground">
-        <p>
+        <span>
           <span className="text-secondary-foreground">Software Engineer.</span>{" "}
           A self-taught developer with an
-        </p>
+        </span>
         <p>interest in Computer Science.</p>
       </div>
       <div className="text-lg text-muted-foreground">
-        <p>🚀 Currently specializing in Frontend (React / Next.js).</p>
+        <span>🚀 Currently specializing in Frontend (React / Next.js).</span>
         <p>
           💻 Frontend Engineer at 
           <Link href={'/'} className="text-primary font-semibold"> HireQ</Link>

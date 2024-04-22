@@ -45,16 +45,13 @@ export function NavLinks() {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[250px] lg:grid-row-[.75fr_1fr] border-b">
-              <ListItem href="/projects" title={ProjectsData[0].title}>
+              <ListItem href="https://github.com/AB-DALRAHM-AN/react-dashboard" title={ProjectsData[0].title}>
                 {ProjectsData[0].description}
               </ListItem>
-              <ListItem href="/projects" title={ProjectsData[1].title}>
+              <ListItem href="https://github.com/AB-DALRAHM-AN/Quote-App" title={ProjectsData[1].title}>
                 {ProjectsData[1].description}
               </ListItem>
-              <ListItem
-                href="/projects"
-                title={ProjectsData[2].title}
-              >
+              <ListItem href="https://github.com/AB-DALRAHM-AN/Portfolio" title={ProjectsData[2].title}>
                 {ProjectsData[2].description}
               </ListItem>
             </ul>
@@ -110,9 +107,9 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <span className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
-          </p>
+          </span>
         </a>
       </NavigationMenuLink>
     </li>

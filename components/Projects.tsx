@@ -19,14 +19,14 @@ const Projects = () => {
         <h1 className={cn("text-2xl font-[700]", ubuntu.className)}>
           All Creative Works.
         </h1>
-        <p className="text-base text-muted-foreground">
+        <span className="text-base text-muted-foreground">
           {`Here's`} some of my projects that I have worked on.
-        </p>
+        </span>
         <Link
           href={"/projects"}
           className="text-primary font-bold text-base flex gap-2 items-center"
         >
-          <p>View All Projects</p>
+          <span>View All Projects</span>
           <ExternalLink size={20} />
         </Link>
       </div>

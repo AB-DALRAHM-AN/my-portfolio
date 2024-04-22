@@ -12,11 +12,11 @@ const About = () => {
       </div>
       <div className="flex flex-col-reverse justify-start items-center md:flex-row gap-10 md:gap-20">
         <div className="flex flex-col gap-5 justify-start items-start md:w-1/2">
-          <p>
+          <span>
             Hey! {`I'm`} Abdul Rahman, {`I've`} been close to a computer since
             an early age, and been passionate about it ever since.
-          </p>
-          <p>
+          </span>
+          <span>
             I really liked to build stuff using{" "}
             <span className="text-primary">no-code tools</span> back in 2010,
             and from that, I explored how to code myself, fast-forward to today,
@@ -31,11 +31,11 @@ const About = () => {
               Web & Mobile Development, Open Source and Competitive Programming
             </span>
             .
-          </p>
-          <p>
+          </span>
+          <span>
             When {`I'm`} not coding I play games with my friends, watch some
             show on Netflix, or if the {`weather's`} good, play basketball! 🏀
-          </p>
+          </span>
         </div>
         <div className="flex justify-center items-center w-1/2">
           <Image

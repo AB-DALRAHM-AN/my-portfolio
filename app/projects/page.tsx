@@ -16,9 +16,9 @@ const ProjectsPage = () => {
         <h1 className={cn("text-2xl font-[700]", ubuntu.className)}>
           All Creative Works.
         </h1>
-        <p className="text-base text-muted-foreground">
+        <span className="text-base text-muted-foreground">
           {`Here's`} some of my projects that I have worked on.
-        </p>
+        </span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {ProjectsData.map((project, index) => (

@@ -63,13 +63,13 @@ export default function ContactUsForm() {
       <div className="flex justify-center items-center flex-col mb-10 w-full">
         <div className="flex flex-col justify-start items-start mb-5">
           <h1 className="text-4xl font-bold mb-3">Keep In Touch.</h1>
-          <p className="text-muted-foreground text-base">
+          <span className="text-muted-foreground text-base">
             {"I'm"} currently specializing in{" "}
             <span className="text-primary">Front-end Development</span>.
-          </p>
-          <p className="text-muted-foreground text-base">
+          </span>
+          <span className="text-muted-foreground text-base">
             Feel free to get in touch and talk more about your projects.
-          </p>
+          </span>
         </div>
         <form
           className="flex flex-col justify-center items-center gap-4"
@@ -159,10 +159,10 @@ export default function ContactUsForm() {
 //           <p className="text-muted-foreground text-base">
 //             {`I'm`} currently specializing in{" "}
 //             <span className="text-primary">Front-end Development</span>.
-//           </p>
+//           </span>
 //           <p className="text-muted-foreground text-base">
 //             Feel free to get in touch and talk more about your projects.
-//           </p>
+//           </span>
 //         </div>
 //         <form
 //           className="flex flex-col justify-center items-center gap-4"
