@@ -9,9 +9,9 @@ import {
   Preview,
   Row,
   Section,
-  Text,
-  Img,
+  Text
 } from "@react-email/components";
+import Link from "next/link";
 import * as React from "react";
 
 interface YelpRecentLoginEmailProps {
@@ -58,11 +58,11 @@ export const YelpRecentLoginEmail = ({ name }: YelpRecentLoginEmailProps) => {
             </Row>
             <Row style={{ ...boxInfos, paddingTop: "0" }}>
               <Column style={containerButton} colSpan={2}>
-                <a href="https://abdalrahman.tech">
+                <Link href="https://abdalrahman.tech">
                   <p style={{ textDecoration: "none" }}>
                     <Button style={button}>Visit my website</Button>
-                  </span>
-                </a>
+                  </p>
+                </Link>
               </Column>
             </Row>
           </Section>
