@@ -105,8 +105,8 @@ export default function ContactUsForm() {
             />
           </div>
           <Button
-            variant={"secondary"}
-            className="md:w-[400px] w-[200px]"
+            variant={'outline'}
+            className="md:w-[400px] w-[200px] bg-card hover:bg-card-foreground/10"
             type="submit"
             disabled={isSubmitting}
           >

@@ -23,7 +23,7 @@ export const ProjectCard = ({
   technologies,
 }: ProjectCardProps) => {
   return (
-    <div className="bg-secondary/50 shadow-md rounded-md">
+    <div className="bg-card shadow-md rounded-md">
       <Image
         src={img}
         alt={name}
@@ -44,8 +44,11 @@ export const ProjectCard = ({
               </Link>
             </div>
           </div>
-          <Technologies techs={technologies} />
+          <span className="text-base font-semibold text-muted-foreground">
+            <Technologies techs={technologies} />
+          </span>
         </div>
+
         <div className="mt-2 text-base font-semibold text-muted-foreground">
           <span>{discription}</span>
         </div>

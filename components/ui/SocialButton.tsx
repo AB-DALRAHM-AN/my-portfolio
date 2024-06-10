@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./button";
 
@@ -17,8 +16,8 @@ const SocialButton = ({
     <>
       <Link href={href} target="_blank">
         <Button
-          variant={"secondary"}
-          className="flex flex-row justify-center items-center shadow-md hover:shadow-none transition-all gap-2"
+          variant={'outline'}
+          className="flex flex-row bg-card justify-center items-center shadow-md hover:shadow-none hover:bg-card-foreground/5 transition-all gap-2"
         >
           {icon}
           {text}

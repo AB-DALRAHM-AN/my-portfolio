@@ -46,10 +46,10 @@ const Hero = () => {
         <p>interest in Computer Science.</p>
       </div>
       <div className="text-lg text-muted-foreground">
-        <span>🚀 Currently specializing in Frontend (React / Next.js).</span>
+        <span>🚀 Currently specializing in Frontend (<span className="text-primary">React</span> / <span className="text-primary">Next.js</span>).</span>
         <p>
-          💻 Frontend Engineer at 
-          <Link href={'/'} className="text-primary font-semibold"> HireQ</Link>
+          💻 Software Engineer at 
+          <Link href={'/'} className="font-bold "> HireQ</Link>
         </p>
       </div>
       <div className="flex flex-row justify-center items-center gap-4">

@@ -22,7 +22,7 @@ const Technologies = ({ techs }: { techs: string[] }) => {
         return (
           <span
             key={index}
-            className="flex gap-1 items-center text-sm font-base flex-wrap bg-secondary px-2 py-1 rounded-md hover:bg-secondary transition-all duration-300 ease-in-out"
+            className="flex gap-1 items-center text-sm font-base flex-wrap px-2 py-1 rounded-md bg-card-foreground/5 transition-all duration-300 ease-in-out"
           >
             {tech === "html" && (
               <span className="flex justify-center items-center gap-1 text-red-500">

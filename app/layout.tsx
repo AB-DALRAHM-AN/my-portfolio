@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} theme-blue`}>
+      <body className={`${inter.className} Dark-Light-theme`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

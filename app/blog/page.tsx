@@ -52,7 +52,7 @@ export default async function BlogPage() {
                 <div className="block cursor-pointer py-3">
                   <div className="flex justify-between mx-2 my-1 items-center text-gray-600 text-sm">
                     <span>{date}</span>
-                    <Badge variant={"outline"}>{readingTime} Read</Badge>
+                    <Badge variant={"outline"}>{readingTime}</Badge>
                   </div>
                   <div className="px-4">
                     <h2 className="text-2xl font-bold mb-2">{title}</h2>

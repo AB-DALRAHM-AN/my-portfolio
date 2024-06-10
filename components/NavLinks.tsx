@@ -14,7 +14,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { redirect, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export function NavLinks() {
   const pathname = usePathname();
@@ -27,7 +27,7 @@ export function NavLinks() {
               className={cn(
                 "text-base bg-transparent",
                 navigationMenuTriggerStyle(),
-                pathname === "/" && "bg-accent"
+                pathname === "/" && "bg-card hover:bg-card-foreground/10"
               )}
             >
               Home
@@ -38,20 +38,29 @@ export function NavLinks() {
           <NavigationMenuTrigger
             className={cn(
               "text-base bg-transparent",
-              pathname === "/projects" && "bg-accent"
+              pathname === "/projects" && "bg-card hover:bg-card-foreground/10"
             )}
           >
             Projects
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[250px] lg:grid-row-[.75fr_1fr] border-b">
-              <ListItem href="https://github.com/AB-DALRAHM-AN/react-dashboard" title={ProjectsData[0].title}>
+              <ListItem
+                href="https://github.com/AB-DALRAHM-AN/react-dashboard"
+                title={ProjectsData[0].title}
+              >
                 {ProjectsData[0].description}
               </ListItem>
-              <ListItem href="https://github.com/AB-DALRAHM-AN/Quote-App" title={ProjectsData[1].title}>
+              <ListItem
+                href="https://github.com/AB-DALRAHM-AN/Quote-App"
+                title={ProjectsData[1].title}
+              >
                 {ProjectsData[1].description}
               </ListItem>
-              <ListItem href="https://github.com/AB-DALRAHM-AN/Portfolio" title={ProjectsData[2].title}>
+              <ListItem
+                href="https://github.com/AB-DALRAHM-AN/Portfolio"
+                title={ProjectsData[2].title}
+              >
                 {ProjectsData[2].description}
               </ListItem>
             </ul>
@@ -63,8 +72,8 @@ export function NavLinks() {
         <NavigationMenuItem>
           <NavigationMenuTrigger
             className={cn(
-              "text-base bg-transparent",
-              pathname === "/blog" && "bg-accent"
+              "text-base hover:bg-card",
+              pathname === "/blog" && "bg-card hover:bg-card-foreground/10"
             )}
           >
             Blog
