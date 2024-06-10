@@ -35,7 +35,7 @@ export default async function BlogPage() {
           return (
             <div
               key={post.id}
-              className="bg-white shadow-md select-none rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300"
+              className="bg-card shadow-md select-none rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300"
             >
               <Link
                 href={`/blog/post/${post.properties.slug?.rich_text[0]?.plain_text}`}
@@ -50,20 +50,20 @@ export default async function BlogPage() {
                   />
                 </div>
                 <div className="block cursor-pointer py-3">
-                  <div className="flex justify-between mx-2 my-1 items-center text-gray-600 text-sm">
+                  <div className="flex justify-between mx-2 my-1 items-center text-muted-foreground text-sm">
                     <span>{date}</span>
-                    <Badge variant={"outline"}>{readingTime}</Badge>
+                    <Badge variant={'card'}>{readingTime}</Badge>
                   </div>
                   <div className="px-4">
                     <h2 className="text-2xl font-bold mb-2">{title}</h2>
-                    <p className="text-gray-700 mb-4 line-clamp-3">
+                    <p className="text-muted-foreground/70 mb-4 line-clamp-3">
                       {description}
                     </p>
                     <div className="flex justify-between items-center text-gray-600 text-sm mb-2"></div>
                     {post.properties.tags?.multi_select.length > 0 && (
                       <div className="flex flex-wrap gap-2 -m-1">
                         {post.properties.tags.multi_select.map((tag: any) => (
-                          <Badge variant={"outline"} key={tag.id}>
+                          <Badge variant={'card'} key={tag.id}>
                             {tag.name}
                           </Badge>
                         ))}

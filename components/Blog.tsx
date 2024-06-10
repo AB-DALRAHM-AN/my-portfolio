@@ -57,8 +57,6 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Badge } from "./ui/badge";
 import { fetchPages } from "@/lib/notion";
 import { ExternalLink } from "lucide-react";
 
@@ -77,7 +75,7 @@ export default async function LatestPosts() {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {posts.results.map((post) => {
+        {posts.results.map((post: any) => {
           const readingTime =
             post.properties.readTime?.rich_text[0]?.plain_text || "N/A";
           const date = post.properties.date?.created_time
