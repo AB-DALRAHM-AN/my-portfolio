@@ -1,54 +1,81 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { fetchPages } from "@/lib/notion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import React from "react";
+import { Badge } from "@/components/ui/badge";
 
-export default function Home() {
-  const blogDir = "posts";
+export default async function BlogPage() {
+  const posts = await fetchPages();
 
-  const files = fs.readdirSync(path.join(blogDir));
-  const blogs = files.map((filename) => {
-    const fileContent = fs.readFileSync(path.join(blogDir, filename), "utf-8");
-
-    const { data: frontMatter } = matter(fileContent);
-    return {
-      meta: frontMatter,
-      slug: filename.replace(".mdx", ""),
-    };
-  });
   return (
-    <main className="flex flex-col justify-start md:gap-8 gap-5 items-start mx-10 md:mx-40 md:my-14 h-screen">
-      <section className="">
-        <div className="flex flex-col justify-start items-start gap-3">
-          <h1 className="text-6xl font-bold">Blog</h1>
-          <p className="text-secondary-foreground/50">
-            A collection of my thoughts and experiences.
-          </p>
-        </div>
-      </section>
-      <span className="w-full h-[1px] bg-secondary"></span>
-      <section className="py-5">
-        <div className="py-2">
-          {blogs.map((blog) => (
-            <Link href={"blog/posts/" + blog.slug} passHref key={blog.slug}>
-              <div className="py-2 flex justify-between align-middle items-center mb-4">
-                <div>
-                  <h3 className="text-lg font-blod">{blog.meta.title}</h3>
-                  <div>
-                    <span className="text-gray-400">
-                      {blog.meta.description}
-                    </span>
+    <div className="container my-10 mx-auto p-6">
+      <h1 className="text-4xl font-bold mb-8">Blog</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.results.map((post: any) => {
+          const readingTime =
+            post.properties.readTime?.rich_text[0]?.plain_text || "Unknown";
+          const date = post.properties.date?.created_time
+            ? new Date(post.properties.date.created_time).toLocaleDateString(
+                "en-US",
+                {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                }
+              )
+            : "Unknown Date";
+          const imageUrl =
+            post.properties.img?.files[0]?.file?.url || "/default-image.jpg";
+          const title =
+            post.properties.Title?.title[0]?.plain_text || "No Title";
+          const description =
+            post.properties.description?.rich_text[0]?.plain_text ||
+            "No description available.";
+
+          return (
+            <div
+              key={post.id}
+              className="bg-white shadow-md select-none rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300"
+            >
+              <Link
+                href={`/blog/post/${post.properties.slug?.rich_text[0]?.plain_text}`}
+              >
+                <div className="w-full h-48 relative">
+                  <Image
+                    src={imageUrl}
+                    alt={title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    unoptimized
+                  />
+                </div>
+                <div className="block cursor-pointer py-3">
+                  <div className="flex justify-between mx-2 my-1 items-center text-gray-600 text-sm">
+                    <span>{date}</span>
+                    <Badge variant={"outline"}>{readingTime} Read</Badge>
                   </div>
-                  <div className="my-auto text-gray-400">
-                      <span className="text-primary flex gap-1 justify-start items-center">Read more <ArrowRight /></span>
+                  <div className="px-4">
+                    <h2 className="text-2xl font-bold mb-2">{title}</h2>
+                    <p className="text-gray-700 mb-4 line-clamp-3">
+                      {description}
+                    </p>
+                    <div className="flex justify-between items-center text-gray-600 text-sm mb-2"></div>
+                    {post.properties.tags?.multi_select.length > 0 && (
+                      <div className="flex flex-wrap gap-2 -m-1">
+                        {post.properties.tags.multi_select.map((tag: any) => (
+                          <Badge variant={"outline"} key={tag.id}>
+                            {tag.name}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-    </main>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
