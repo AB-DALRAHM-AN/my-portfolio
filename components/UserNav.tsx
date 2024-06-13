@@ -1,17 +1,18 @@
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { AppWindowMac, Home, Menu, NotebookPen } from "lucide-react";
+"use client";
 
+import { AppWindowMac, Home, MenuIcon, NotebookPen } from "lucide-react";
 import Link from "next/link";
-import { ModeToggle } from "./ModeToogle";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export const navItems = [
   { name: "Home", href: "/", icon: Home },
@@ -20,45 +21,52 @@ export const navItems = [
 ];
 
 export function UserNav() {
+  const pathname = usePathname();
+  
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost">
-          <Menu className="w-5 h-5" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="min-w-[70vw] mt-3 rounded-xl" align="end" forceMount>
-        <DropdownMenuLabel>
-          <div className="flex flex-col space-y-1">
-            <span className="text-sm font-medium leading-none">
-              Abdalrahman Ahmed Ali
-            </span>
-            <span className="text-xs leading-none text-muted-foreground">
-              abdalrahman.webdev@gmail.com
-            </span>
-          </div>
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          {navItems.map((item, index) => (
-            <DropdownMenuItem asChild key={index}>
-              <Link
-                href={item.href}
-                className="w-full flex justify-between items-center"
-              >
-                {item.name}
-                <span>
-                  <item.icon className="w-4 h-4" />
-                </span>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant={'outline'} className="fixed top-5 right-5">
+            <MenuIcon />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side={'top'}>
+          <SheetHeader className="mb-10">
+            <SheetTitle className="text-3xl">
+              <Link href="/">
+                Abdelrahman Ahmed<span className="text-primary">Ali</span>
               </Link>
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem className="flex justify-center ">
-          <ModeToggle />
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+            </SheetTitle>
+            <SheetDescription>
+              Start a conversation{" "}
+              <Link
+                href="mailto:abdelrahman.webdev@gmail.com"
+                className="border-b border-primary"
+              >
+                abdelrahman.webdev@gmail.com
+              </Link>
+            </SheetDescription>
+          </SheetHeader>
+          <div className="flex flex-col justify-center items-center">
+            {navItems.map((link, index) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className={cn(
+                    "flex items-center gap-3 text-xl px-3 py-2 rounded-md w-full hover:bg-secondary",
+                    pathname === link.href ? "bg-secondary" : ""
+                  )}
+                >
+                  {Icon && <Icon className="w-6 h-6 mr-2" />}
+                  <p>{link.name}</p>
+                </Link>
+              );
+            })}
+          </div>
+          <div className="flex justify-center items-center mt-10"></div>
+        </SheetContent>
+      </Sheet>
   );
 }
