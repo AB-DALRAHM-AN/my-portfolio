@@ -15,8 +15,8 @@ export default async function BlogPage() {
   const projects = await fetchProjects();
 
   return (
-    <section className="flex flex-col justify-start md:gap-8 gap-5 items-start mx-10 my-32 md:mx-40 md:my-24">
-      <div className="flex flex-col gap-1">
+    <section className="container flex flex-col justify-start md:gap-8 gap-5 items-start h-fit my-16 md:my-24">
+      <div className="flex flex-col gap-1 mb-6">
         <h1 className={cn("text-2xl font-[700]", ubuntu.className)}>
           All Creative Works.
         </h1>

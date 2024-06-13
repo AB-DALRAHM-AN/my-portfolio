@@ -1,19 +1,29 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem", // Default padding for mobile devices
+        sm: "2rem", // Small screens (e.g., tablets)
+        md: "4rem", // Medium screens (e.g., small laptops)
+        lg: "5rem", // Large screens (e.g., desktops)
+        xl: "6rem", // Extra-large screens
+      },
       screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1400px",
       },
     },
@@ -74,7 +84,7 @@ const config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
-} satisfies Config
+  plugins: [require("@tailwindcss/typography")],
+} satisfies Config;
 
-export default config
+export default config;

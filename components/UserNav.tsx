@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -28,11 +27,15 @@ export function UserNav() {
           <Menu className="w-5 h-5" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56" align="end" forceMount>
+      <DropdownMenuContent className="min-w-[70vw] mt-3 rounded-xl" align="end" forceMount>
         <DropdownMenuLabel>
           <div className="flex flex-col space-y-1">
-            <span className="text-sm font-medium leading-none">Abdalrahman Ahmed Ali</span>
-            <span className="text-xs leading-none text-muted-foreground">abdalrahman.webdev@gmail.com</span>
+            <span className="text-sm font-medium leading-none">
+              Abdalrahman Ahmed Ali
+            </span>
+            <span className="text-xs leading-none text-muted-foreground">
+              abdalrahman.webdev@gmail.com
+            </span>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
