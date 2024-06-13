@@ -5,6 +5,8 @@ import { ExternalLink } from "lucide-react";
 
 export default async function LatestPosts() {
   const posts = await fetchPages();
+
+  const latestPosts = posts.results.slice(0, 2);
   return (
     <section className="flex flex-col justify-start md:gap-8 gap-5 items-start mx-10 my-32 md:mx-40 md:my-24">
       <div className="flex justify-between items-center w-full">
@@ -18,7 +20,7 @@ export default async function LatestPosts() {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {posts.results.map((post: any) => {
+        {latestPosts.map((post: any) => {
           const readingTime =
             post.properties.readTime?.rich_text[0]?.plain_text || "N/A";
           const date = post.properties.date?.created_time
