@@ -10,13 +10,13 @@ import "server-only";
 
 // Create a new Notion client
 export const notion = new Client({
-  auth: process.env.NEXT_PUBLIC_NOTION_API_KEY!,
+  auth: process.env.NEXT_PUBLIC_NOTION_BLOGS_API_KEY!,
 });
 
 // Fetch pages from the Notion database
 export const fetchPages = React.cache(() => {
   return notion.databases.query({
-    database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID!,
+    database_id: process.env.NEXT_PUBLIC_NOTION_BLOGS_DATABASE_ID!,
     filter: {
       property: "status",
       status: {
@@ -29,7 +29,7 @@ export const fetchPages = React.cache(() => {
 export const fetchBySlug = React.cache((slug: string) => {
   return notion.databases
     .query({
-      database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID!,
+      database_id: process.env.NEXT_PUBLIC_NOTION_BLOGS_DATABASE_ID!,
       filter: {
         property: "slug",
         rich_text: {
