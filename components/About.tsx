@@ -6,7 +6,7 @@ import Me from "../public/Me.jpg";
 const About = () => {
   return (
     <section className="flex flex-col justify-start items-start mx-10 my-32 md:mx-40 md:my-24">
-      <div className="flex justify-start items-center gap-2">
+      <div className="flex justify-start items-center mb-8 md:mb-0 gap-2">
         <Zap className="text-primary" />
         <h1 className="text-2xl font-bold">About Me</h1>
       </div>

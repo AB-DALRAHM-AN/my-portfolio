@@ -6,7 +6,7 @@ export const ProjectsData = [
     img: "/React-Dashboard.png",
     liveLink: "https://a-react-dashboard.netlify.app/",
     githubLink: "https://github.com/AB-DALRAHM-AN/react-dashboard",
-    technology: ["html", "css", "js", "react"],
+    technology: ["", "css", "js", "react"],
   },
   {
     title: "Quote App",

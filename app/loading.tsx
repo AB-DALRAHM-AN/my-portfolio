@@ -1,10 +1,9 @@
 import React from "react";
 import "./loading.css";
-import { Dice1 } from "lucide-react";
 
 const Loading = () => {
   return (
-    <section className="h-screen">
+    <section>
       <div className="terminal-loader">
         <div className="terminal-header">
           <div className="terminal-title">Status</div>

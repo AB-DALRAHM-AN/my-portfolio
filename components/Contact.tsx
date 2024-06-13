@@ -59,7 +59,7 @@ export default function ContactUsForm() {
   }
 
   return (
-    <section className="flex flex-col justify-center items-center md:gap-8 gap-5 mx-10 my-32 md:mx-40 md:my-24">
+    <section className="flex flex-col justify-center items-center md:gap-8 gap-5 mx-10 my-16 md:mx-40 md:my-24">
       <div className="flex justify-center items-center flex-col mb-10 w-full">
         <div className="flex flex-col justify-start items-start mb-5">
           <h1 className="text-4xl font-bold mb-3">Keep In Touch.</h1>

@@ -27,9 +27,10 @@ export const ProjectCard = ({
       <Image
         src={img}
         alt={name}
-        width={580}
+        width={600}
         height={280}
         className="rounded-t-lg"
+        unoptimized
       />
       <div className="p-5 pt-3">
         <div className="border-b border-[#aaa]">
