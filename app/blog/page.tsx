@@ -25,12 +25,11 @@ export default async function BlogPage() {
               )
             : "Unknown Date";
           const imageUrl =
-            post.properties.img?.files[0]?.file?.url || "/default-image.jpg";
+            post.properties.img?.files[0]?.file?.url;
           const title =
-            post.properties.Title?.title[0]?.plain_text || "No Title";
+            post.properties.Title?.title[0]?.plain_text;
           const description =
-            post.properties.description?.rich_text[0]?.plain_text ||
-            "No description available.";
+            post.properties.description?.rich_text[0]?.plain_text;
 
           return (
             <div

@@ -27,11 +27,9 @@ export default async function BlogPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.results.map((project: any, index) => {
           const imageUrl = project.properties.img?.files[0]?.file?.url;
-          const title =
-            project.properties.Title?.title[0]?.plain_text || "No Title";
+          const title = project.properties.Title?.title[0]?.plain_text;
           const description =
-            project.properties.description?.rich_text[0]?.plain_text ||
-            "No description available.";
+            project.properties.description?.rich_text[0]?.plain_text;
           const tags = project.properties.tags?.multi_select || [];
 
           return (
