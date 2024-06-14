@@ -3,8 +3,6 @@ import {
   BlockObjectResponse,
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
-import React from "react";
-import "server-only";
 
 // Notion Blog API
 
@@ -14,8 +12,8 @@ export const notion = new Client({
 });
 
 // Fetch pages from the Notion database
-export const fetchProjects = React.cache(() => {
-  return notion.databases.query({
+export const fetchProjects = async () => {
+  const response = await notion.databases.query({
     database_id: process.env.NEXT_PUBLIC_NOTION_PROJECTS_DATABASE_ID!,
     filter: {
       property: "status",
@@ -24,27 +22,27 @@ export const fetchProjects = React.cache(() => {
       },
     },
   });
-});
+  return response.results;
+};
+
 // Fetch a page by its slug
-export const fetchBySlug = React.cache((slug: string) => {
-  return notion.databases
-    .query({
-      database_id: process.env.NEXT_PUBLIC_NOTION_PROJECTS_DATABASE_ID!,
-      filter: {
-        property: "slug",
-        rich_text: {
-          equals: slug,
-        },
+export const fetchBySlug = async (slug: string) => {
+  const response = await notion.databases.query({
+    database_id: process.env.NEXT_PUBLIC_NOTION_PROJECTS_DATABASE_ID!,
+    filter: {
+      property: "slug",
+      rich_text: {
+        equals: slug,
       },
-    })
-    .then((res) => res.results[0] as PageObjectResponse | undefined);
-});
+    },
+  });
+  return response.results[0] as PageObjectResponse | undefined;
+};
 
 // Fetch a page by its ID
-export const fetchProjectsBlocks = React.cache((pageId: string) => {
-  return notion.blocks.children
-    .list({
-      block_id: pageId,
-    })
-    .then((res) => res.results as BlockObjectResponse[]);
-});
+export const fetchProjectsBlocks = async (pageId: string) => {
+  const response = await notion.blocks.children.list({
+    block_id: pageId,
+  });
+  return response.results as BlockObjectResponse[];
+};

@@ -25,7 +25,7 @@ export default async function BlogPage() {
         </span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.results.map((project: any, index) => {
+        {projects.map((project: any, index) => {
           const imageUrl = project.properties.img?.files[0]?.file?.url;
           const title = project.properties.Title?.title[0]?.plain_text;
           const description =
