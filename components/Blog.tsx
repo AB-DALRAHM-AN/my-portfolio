@@ -6,7 +6,7 @@ import { ExternalLink } from "lucide-react";
 export default async function LatestPosts() {
   const posts = await fetchPages();
 
-  const latestPosts = posts.results.slice(0, 2);
+  const latestPosts = posts.slice(0, 2);
   return (
     <section className="flex flex-col justify-start md:gap-8 gap-5 items-start mx-10 my-32 md:mx-40 md:my-24">
       <div className="flex justify-between items-center w-full">
