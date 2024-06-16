@@ -6,7 +6,7 @@ import { Github, Link2 } from "lucide-react";
 import Technologies from "./Technologies";
 
 interface ProjectCardProps {
-  description: string;
+  discription: string;
   img: any;
   name: string;
   liveLink: string;
@@ -15,7 +15,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({
-  description,
+  discription,
   img,
   name,
   liveLink,
@@ -51,7 +51,7 @@ export const ProjectCard = ({
         </div>
 
         <div className="mt-2 text-base font-semibold text-muted-foreground">
-          <span>{description}</span>
+          <span>{discription}</span>
         </div>
       </div>
     </div>

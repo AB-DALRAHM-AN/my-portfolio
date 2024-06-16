@@ -11,7 +11,7 @@ export default async function BlogPage() {
     <div className="container my-10 mx-auto p-6">
       <h1 className="text-4xl font-bold mb-8">Blog</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post: any) => {
+        {posts.results.map((post: any) => {
           const readingTime =
             post.properties.readTime?.rich_text[0]?.plain_text || "Unknown";
           const date = post.properties.date?.created_time
@@ -25,11 +25,12 @@ export default async function BlogPage() {
               )
             : "Unknown Date";
           const imageUrl =
-            post.properties.img?.files[0]?.file?.url;
+            post.properties.img?.files[0]?.file?.url || "/default-image.jpg";
           const title =
-            post.properties.Title?.title[0]?.plain_text;
+            post.properties.Title?.title[0]?.plain_text || "No Title";
           const description =
-            post.properties.description?.rich_text[0]?.plain_text;
+            post.properties.description?.rich_text[0]?.plain_text ||
+            "No description available.";
 
           return (
             <div
