@@ -2,19 +2,10 @@ import React from "react";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { fetchProjects } from "@/lib/notionProjects";
-import useSWR from "swr"; // Import the useSWR function
 
 export default function LatestProjects() {
 
-  // fetch projects from the API and add revalidation
-  const { data: projects, error } = useSWR("/api/projects", fetchProjects, {
-    revalidateOnFocus: false,
-  });
-
-  if (error) return <div>Failed to load projects</div>;
-  if (!projects) return <div>Loading...</div>;
-  
-
+  const projects = fetchProjects();
   const latestProjects = projects.slice(0, 2);
 
   return (
