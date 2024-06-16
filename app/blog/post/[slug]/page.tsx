@@ -1,4 +1,4 @@
-import { fetchBySlug, fetchPageBlocks, notion } from "@/lib/notionBlogs";
+import { fetchBlogBySlug, fetchBlogPageBlocks, notion } from "@/lib/notionBlogs";
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
@@ -8,11 +8,11 @@ export default async function PostsPage({
 }: {
   params: { slug: string };
 }) {
-  const post = await fetchBySlug(params.slug);
+  const post = await fetchBlogBySlug(params.slug);
   if (!post) {
     return <div>Post not found</div>;
   }
-  const content = await fetchPageBlocks(post.id);
+  const content = await fetchBlogPageBlocks(post.id);
 
   const renderer = new NotionRenderer({
     client: notion,
