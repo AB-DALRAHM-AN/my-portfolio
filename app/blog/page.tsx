@@ -1,11 +1,11 @@
-import { fetchPages } from "@/lib/notionBlogs";
+import { fetchBlogPages } from "@/lib/notionBlogs";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 
 export default async function BlogPage() {
-  const posts = await fetchPages();
+  const posts = await fetchBlogPages();
 
   return (
     <div className="container my-10 mx-auto p-6">

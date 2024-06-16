@@ -12,7 +12,7 @@ export const notion = new Client({
 });
 
 // Fetch pages from the Notion database
-export const fetchPages = async () => {
+export const fetchBlogPages = async () => {
   const response = await notion.databases.query({
     database_id: process.env.NEXT_PUBLIC_NOTION_BLOGS_DATABASE_ID!,
     filter: {
@@ -26,7 +26,7 @@ export const fetchPages = async () => {
 };
 
 // Fetch a page by its slug
-export const fetchBySlug = async (slug: string) => {
+export const fetchBlogBySlug = async (slug: string) => {
   const response = await notion.databases.query({
     database_id: process.env.NEXT_PUBLIC_NOTION_BLOGS_DATABASE_ID!,
     filter: {
@@ -40,7 +40,7 @@ export const fetchBySlug = async (slug: string) => {
 };
 
 // Fetch a page by its ID
-export const fetchPageBlocks = async (pageId: string) => {
+export const fetchBlogPageBlocks = async (pageId: string) => {
   const response = await notion.blocks.children.list({
     block_id: pageId,
   });

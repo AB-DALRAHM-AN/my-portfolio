@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { fetchPages } from "@/lib/notionBlogs";
+import { fetchBlogPages } from "@/lib/notionBlogs";
 import { ExternalLink } from "lucide-react";
 
 export default async function LatestPosts() {
-  const posts = await fetchPages();
+  const posts = await fetchBlogPages();
 
   const latestPosts = posts.slice(0, 2);
   return (
