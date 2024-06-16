@@ -1,10 +1,10 @@
+// lib/notionProjects.ts
+
 import { Client } from "@notionhq/client";
 import {
   BlockObjectResponse,
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
-
-// Notion Projects API
 
 // Create a new Notion client
 export const notion = new Client({

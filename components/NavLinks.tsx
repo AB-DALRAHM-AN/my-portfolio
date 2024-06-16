@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ProjectsData } from "@/data/projects";
 
 import { cn } from "@/lib/utils";
 import {
@@ -47,21 +46,9 @@ export function NavLinks() {
             <ul className="grid gap-3 p-6 md:w-[250px] lg:grid-row-[.75fr_1fr] border-b">
               <ListItem
                 href="https://github.com/AB-DALRAHM-AN/react-dashboard"
-                title={ProjectsData[0].title}
+                title={"React Dashboard"}
               >
-                {ProjectsData[0].description}
-              </ListItem>
-              <ListItem
-                href="https://github.com/AB-DALRAHM-AN/Quote-App"
-                title={ProjectsData[1].title}
-              >
-                {ProjectsData[1].description}
-              </ListItem>
-              <ListItem
-                href="https://github.com/AB-DALRAHM-AN/Portfolio"
-                title={ProjectsData[2].title}
-              >
-                {ProjectsData[2].description}
+                {"A React Dashboard with Tailwind CSS and Radix UI."}
               </ListItem>
             </ul>
             <ul className="px-6 py-2">

@@ -1,12 +1,22 @@
 import React from "react";
 import Link from "next/link";
-import { fetchProjects } from "@/lib/notionProjects";
 import { ExternalLink } from "lucide-react";
+import { fetchProjects } from "@/lib/notionProjects";
+import useSWR from "swr"; // Import the useSWR function
 
-export default async function LatestPosts() {
-  const Projects = await fetchProjects();
+export default function LatestProjects() {
 
-  const latestProjects = Projects.slice(0, 2);
+  // fetch projects from the API and add revalidation
+  const { data: projects, error } = useSWR("/api/projects", fetchProjects, {
+    revalidateOnFocus: false,
+  });
+
+  if (error) return <div>Failed to load projects</div>;
+  if (!projects) return <div>Loading...</div>;
+  
+
+  const latestProjects = projects.slice(0, 2);
+
   return (
     <section className="flex flex-col justify-start md:gap-8 gap-5 items-start mx-10 my-32 md:mx-40 md:my-24">
       <div className="flex justify-between items-center w-full">
@@ -60,3 +70,4 @@ export default async function LatestPosts() {
     </section>
   );
 }
+
