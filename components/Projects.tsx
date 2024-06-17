@@ -4,23 +4,19 @@ import { ExternalLink } from "lucide-react";
 import { fetchProjects } from "@/lib/notionProjects";
 import { ProjectCard } from "./ProjectCard";
 
-
-const fetchLatestProjects = async () => {
-  const projects = fetchProjects();
-  const latestProjects = (await projects).slice(0, 2);
-  return latestProjects;
-};
-
 export const revalidate = 10;
 
 const Projects = async () => {
-  const latestProjects = fetchLatestProjects();
+  const projects = fetchProjects();
+  const latestProjects = (await projects).slice(0, 2);
 
   return (
     <section className="flex flex-col justify-start md:gap-8 gap-5 items-start mx-10 my-32 md:mx-40 md:my-24">
       <div className="flex flex-col justify-between items-start w-full">
         <h1 className="text-2xl font-bold">All Creative Works.</h1>
-        <p className="text-lg font-medium text-muted-foreground/70">{`Here's`} some of my projects that I have worked on.</p>
+        <p className="text-lg font-medium text-muted-foreground/70">
+          {`Here's`} some of my projects that I have worked on.
+        </p>
         <Link
           href="/projects"
           className="flex justify-between items-center gap-2 text-primary text-base font-semibold"
@@ -35,10 +31,14 @@ const Projects = async () => {
           const title = project.properties.Title?.title[0]?.plain_text;
           const description =
             project.properties.description?.rich_text[0]?.plain_text;
-            const tags = project.properties.tags?.multi_select.map((tag: { name: any; }) => tag.name);
-            const liveLink = project.properties.liveLink?.rich_text[0].plain_text || '';
-            const githubLink = project.properties.githubLink.rich_text[0].plain_text || '';
-            const projectPage = `/projects/project/${project.properties.slug.rich_text[0].plain_text}`;
+          const tags = project.properties.tags?.multi_select.map(
+            (tag: { name: any }) => tag.name
+          );
+          const liveLink =
+            project.properties.liveLink?.rich_text[0].plain_text || "";
+          const githubLink =
+            project.properties.githubLink.rich_text[0].plain_text || "";
+          const projectPage = `/projects/project/${project.properties.slug.rich_text[0].plain_text}`;
 
           return (
             <ProjectCard
