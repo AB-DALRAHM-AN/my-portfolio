@@ -3,10 +3,14 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { fetchProjects } from "@/lib/notionProjects";
 
-export default function LatestProjects() {
-
+const fetchLatestProjects = async () => {
   const projects = fetchProjects();
-  const latestProjects = projects.slice(0, 2);
+  const latestProjects = (await projects).slice(0, 2);
+  return latestProjects;
+};
+
+const Projects = async () => {
+  const latestProjects = fetchLatestProjects();
 
   return (
     <section className="flex flex-col justify-start md:gap-8 gap-5 items-start mx-10 my-32 md:mx-40 md:my-24">
@@ -21,7 +25,7 @@ export default function LatestProjects() {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {latestProjects.map((project: any) => {
+        {(await latestProjects).map((project: any) => {
           const readingTime =
             project.properties.readTime?.rich_text[0]?.plain_text || "N/A";
           const date = project.properties.date?.created_time
@@ -37,7 +41,7 @@ export default function LatestProjects() {
 
           return (
             <Link
-              href={`/blog/post/${project.properties.slug.rich_text[0].plain_text}`}
+              href={`/projects/project/${project.properties.slug.rich_text[0].plain_text}`}
               passHref
               key={project.id}
             >
@@ -60,5 +64,6 @@ export default function LatestProjects() {
       </div>
     </section>
   );
-}
+};
 
+export default Projects;

@@ -1,10 +1,11 @@
-// lib/notionProjects.ts
-
 import { Client } from "@notionhq/client";
 import {
   BlockObjectResponse,
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
+
+
+export const revalidate = 1;
 
 // Create a new Notion client
 export const notion = new Client({
