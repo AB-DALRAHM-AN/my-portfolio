@@ -5,7 +5,7 @@ import {
 } from "@notionhq/client/build/src/api-endpoints";
 
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 // Create a new Notion client
 export const notion = new Client({

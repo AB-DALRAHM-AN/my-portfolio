@@ -4,6 +4,8 @@ import Image from "next/image";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 
+export const revalidate = 10;
+
 export default async function BlogPage() {
   const projects = await fetchProjects();
 

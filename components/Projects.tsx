@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { fetchProjects } from "@/lib/notionProjects";
 
+export const revalidate = 10;
+
 const fetchLatestProjects = async () => {
   const projects = fetchProjects();
   const latestProjects = (await projects).slice(0, 2);
