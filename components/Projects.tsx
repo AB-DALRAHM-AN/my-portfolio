@@ -26,7 +26,7 @@ const Projects = async () => {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {(await latestProjects).map((project: any) => {
+      {latestProjects.map((project: any) => {
           const imageUrl = project.properties.img?.files[0]?.file?.url;
           const title = project.properties.Title?.title[0]?.plain_text;
           const description =

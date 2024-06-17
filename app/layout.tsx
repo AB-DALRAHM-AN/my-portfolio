@@ -10,7 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Abdal Rahman - Software Engineer",
-  description: "I'm a self-taught developer with an interest in Computer Science.",
+  description:
+    "I'm a self-taught developer with an interest in Computer Science.",
 };
 
 export default function RootLayout({
