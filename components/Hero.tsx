@@ -66,7 +66,7 @@ const Hero = () => {
         <SocialButton
           icon={<File className="text-primary" />}
           text="Resume"
-          href="https://drive.google.com/file/d/16kGQrBNLGtg4BUKV-njZp8mGwGf0JFo9/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1HSeJWfcni_NKPHiIjiqjgIY5yRxVsmnJ/view?usp=drive_link"
         />
       </div>
     </section>
