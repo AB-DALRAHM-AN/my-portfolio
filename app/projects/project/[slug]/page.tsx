@@ -1,4 +1,8 @@
-import { fetchProjectsBySlug, fetchProjectsBlocks, notion } from "@/lib/notionProjects";
+import {
+  fetchProjectsBySlug,
+  fetchProjectsBlocks,
+  notion,
+} from "@/lib/notionProjects";
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";

@@ -1,6 +1,5 @@
 import BlogPostsCard from "@/components/blogPostsCard";
 import { fetchBlogPages } from "@/lib/notionBlogs";
-import Link from "next/link";
 import React from "react";
 
 export const revalidate = 10;
@@ -27,7 +26,7 @@ export default async function BlogPage() {
             : null;
 
           return (
-            <BlogPostsCard 
+            <BlogPostsCard
               key={post.id}
               date={date}
               readTime={readingTime}

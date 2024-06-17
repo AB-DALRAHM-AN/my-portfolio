@@ -1,4 +1,8 @@
-import { fetchBlogBySlug, fetchBlogPageBlocks, notion } from "@/lib/notionBlogs";
+import {
+  fetchBlogBySlug,
+  fetchBlogPageBlocks,
+  notion,
+} from "@/lib/notionBlogs";
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";

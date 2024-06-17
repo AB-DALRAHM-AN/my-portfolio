@@ -4,13 +4,14 @@ import { ExternalLink } from "lucide-react";
 import { fetchProjects } from "@/lib/notionProjects";
 import { ProjectCard } from "./ProjectCard";
 
-export const revalidate = 10;
 
 const fetchLatestProjects = async () => {
   const projects = fetchProjects();
   const latestProjects = (await projects).slice(0, 2);
   return latestProjects;
 };
+
+export const revalidate = 10;
 
 const Projects = async () => {
   const latestProjects = fetchLatestProjects();
