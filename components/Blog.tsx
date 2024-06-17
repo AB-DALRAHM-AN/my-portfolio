@@ -3,6 +3,8 @@ import Link from "next/link";
 import { fetchBlogPages } from "@/lib/notionBlogs";
 import { ExternalLink } from "lucide-react";
 
+export const revalidate = 10;
+
 export default async function LatestPosts() {
   const posts = await fetchBlogPages();
 

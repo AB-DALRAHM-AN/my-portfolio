@@ -6,6 +6,8 @@ import {
 
 // Notion Blog API
 
+export const revalidate = 10;
+
 // Create a new Notion client
 export const notion = new Client({
   auth: process.env.NEXT_PUBLIC_NOTION_BLOGS_API_KEY!,
