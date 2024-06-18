@@ -4,11 +4,11 @@ import { ExternalLink } from "lucide-react";
 import { fetchProjects } from "@/lib/notionProjects";
 import { ProjectCard } from "./ProjectCard";
 
-export const revalidate = 10;
+export const revalidate = 3600 * 24;
 
-export default async function Projects () {
-  const projects = fetchProjects();
-  const latestProjects = (await projects).slice(0, 2);
+export default async function Projects() {
+  const projects = await fetchProjects();
+  const latestProjects = projects.slice(0, 2);
 
   return (
     <section className="flex flex-col justify-start md:gap-8 gap-5 items-start mx-10 my-32 md:mx-40 md:my-24">
@@ -26,7 +26,7 @@ export default async function Projects () {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-      {latestProjects.map((project: any) => {
+        {latestProjects.map((project: any) => {
           const imageUrl = project.properties.img?.files[0]?.file?.url;
           const title = project.properties.Title?.title[0]?.plain_text;
           const description =
@@ -56,4 +56,4 @@ export default async function Projects () {
       </div>
     </section>
   );
-};
+}
