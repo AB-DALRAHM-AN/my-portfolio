@@ -4,7 +4,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 
 export const revalidate = 10;
 
-export default async function BlogPage() {
+export default async function ProjectsPage() {
   const projects = await fetchProjects();
 
   return (

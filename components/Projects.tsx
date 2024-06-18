@@ -6,7 +6,7 @@ import { ProjectCard } from "./ProjectCard";
 
 export const revalidate = 10;
 
-const Projects = async () => {
+export default async function Projects () {
   const projects = fetchProjects();
   const latestProjects = (await projects).slice(0, 2);
 
@@ -57,5 +57,3 @@ const Projects = async () => {
     </section>
   );
 };
-
-export default Projects;
