@@ -4,18 +4,13 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-
-const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Blog", href: "/blog" },
-];
+import { NavItems } from "@/data/NavLinks";
 
 export const NavLinks = () => {
   const pathname = usePathname();
   return (
     <nav className="flex gap-5 mr-3">
-      {navItems.map((item, index) => (
+      {NavItems.map((item, index) => (
         <Link
           key={index}
           href={item.href}

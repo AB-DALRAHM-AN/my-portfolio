@@ -9,7 +9,7 @@ import {
   Preview,
   Row,
   Section,
-  Text
+  Text,
 } from "@react-email/components";
 import Link from "next/link";
 import * as React from "react";
@@ -58,9 +58,9 @@ export const YelpRecentLoginEmail = ({ name }: YelpRecentLoginEmailProps) => {
             </Row>
             <Row style={{ ...boxInfos, paddingTop: "0" }}>
               <Column style={containerButton} colSpan={2}>
-                <Link href="https://abdalrahman.tech">
+                <Link href="https://abdalrahman.tech/blog">
                   <p style={{ textDecoration: "none" }}>
-                    <Button style={button}>Visit my website</Button>
+                    <Button style={button}>See the Latest Posts</Button>
                   </p>
                 </Link>
               </Column>

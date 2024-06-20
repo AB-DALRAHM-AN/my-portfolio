@@ -16,12 +16,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-export const navItems = [
-  { name: "Home", href: "/", icon: Home },
-  { name: "Projects", href: "/projects", icon: AppWindowMac },
-  { name: "Blog", href: "/blog", icon: NotebookPen },
-];
-
 const Header = () => {
   const pathname = usePathname();
 

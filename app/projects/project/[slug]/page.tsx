@@ -12,11 +12,11 @@ export default async function PostsPage({
 }: {
   params: { slug: string };
 }) {
-  const post = await fetchProjectsBySlug(params.slug);
-  if (!post) {
-    return <div>Post not found</div>;
+  const projects = await fetchProjectsBySlug(params.slug);
+  if (!projects) {
+    return <div>Projects not found</div>;
   }
-  const content = await fetchProjectsBlocks(post.id);
+  const content = await fetchProjectsBlocks(projects.id);
 
   const renderer = new NotionRenderer({
     client: notion,

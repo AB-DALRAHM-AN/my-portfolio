@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Blog from "@/components/Blog";
 
-export default function Home() {
+export async function Home() {
   return (
     <section>
       <Hero />

@@ -52,7 +52,6 @@ export const ProjectCard = ({
               <Technologies techs={tags} />
             </span>
           </div>
-
           <div className="mt-2 text-base font-semibold text-muted-foreground">
             <span>{description}</span>
           </div>

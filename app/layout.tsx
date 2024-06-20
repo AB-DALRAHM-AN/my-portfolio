@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={`${inter.className} Dark-Light-theme`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme=''
           enableSystem
           disableTransitionOnChange
         >
