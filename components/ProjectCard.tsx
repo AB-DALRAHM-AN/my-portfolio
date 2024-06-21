@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Fullscreen, Github, Link2 } from "lucide-react";
+import { Github, Link2 } from "lucide-react";
 import Technologies from "./Technologies";
 
 interface ProjectCardProps {
@@ -25,8 +25,8 @@ export const ProjectCard = ({
   project,
 }: ProjectCardProps) => {
   return (
-    <Link href={project} passHref>
-      <div className="bg-card shadow-md rounded-md">
+    <div className="bg-card shadow-md rounded-md">
+      <Link href={project} passHref>
         <Image
           src={img}
           alt={name}
@@ -35,28 +35,28 @@ export const ProjectCard = ({
           className="rounded-t-lg"
           unoptimized
         />
-        <div className="p-5 pt-3">
-          <div className="border-b border-[#aaa]">
-            <div className="flex justify-between mb-2">
-              <span className="text-2xl font-semibold">{name}</span>
-              <div className={`links flex gap-2 text-lg`}>
-                <Link href={liveLink} target="_blank">
-                  <Link2 className="hover:text-primary" />
-                </Link>
-                <Link href={githubLink} target="_blank">
-                  <Github className="hover:text-primary" />
-                </Link>
-              </div>
+      </Link>
+      <div className="p-5 pt-3">
+        <div className="border-b border-[#aaa]">
+          <div className="flex justify-between mb-2">
+            <span className="text-2xl font-semibold">{name}</span>
+            <div className={`links flex gap-2 text-lg`}>
+              <Link href={liveLink} target="_blank">
+                <Link2 className="hover:text-primary" />
+              </Link>
+              <Link href={githubLink} target="_blank">
+                <Github className="hover:text-primary" />
+              </Link>
             </div>
-            <span className="text-base font-semibold text-muted-foreground">
-              <Technologies techs={tags} />
-            </span>
           </div>
-          <div className="mt-2 text-base font-semibold text-muted-foreground">
-            <span>{description}</span>
-          </div>
+          <span className="text-base font-semibold text-muted-foreground">
+            <Technologies techs={tags} />
+          </span>
+        </div>
+        <div className="mt-2 text-base font-semibold text-muted-foreground">
+          <span>{description}</span>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };

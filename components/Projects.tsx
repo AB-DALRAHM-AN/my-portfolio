@@ -32,7 +32,7 @@ export default async function Projects() {
           latestProjects.map((project: any) => {
             const imageUrl =
               project.properties.img?.files[0]?.file?.url ||
-              "/path/to/default-image.jpg";
+              "../public/notAvilable.png";
             const title =
               project.properties.Title?.title[0]?.plain_text ||
               "Untitled Project";
