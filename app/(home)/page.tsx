@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Blog from "@/components/Blog";
 
-export async function Home() {
+export function Home() {
   return (
     <section>
       <Hero />
