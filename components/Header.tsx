@@ -11,10 +11,11 @@ import {
   SheetTitle,
   SheetDescription,
 } from "./ui/sheet";
-import { Home, MenuIcon, AppWindowMac, NotebookPen } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { NavItems } from "@/data/NavLinks";
+import { MenuIcon } from "lucide-react";
 
 const Header = () => {
   const pathname = usePathname();
@@ -51,7 +52,7 @@ const Header = () => {
               </SheetDescription>
             </SheetHeader>
             <div className="flex flex-col justify-center items-center">
-              {navItems.map((link, index) => {
+              {NavItems.map((link, index) => {
                 const Icon = link.icon;
                 return (
                   <Link
