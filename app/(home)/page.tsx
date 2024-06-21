@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Blog from "@/components/Blog";
 
-export function Home() {
+async function Home() {
   return (
     <section>
       <Hero />
@@ -15,3 +15,5 @@ export function Home() {
     </section>
   );
 }
+
+export default Home;
