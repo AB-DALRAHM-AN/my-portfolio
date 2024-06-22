@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
-import MessageUsEmail from "@/emails/HelloEmail";
-import { EmailForMe } from "@/emails/EmailForMe";
+import MessageUsEmail from "@/emails/HelloEmail"; // Ensure this path is correct
+import EmailForMe from "@/emails/EmailForMe"; // Ensure this path is correct
 
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 
@@ -10,21 +10,24 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { name, email, message } = body;
 
-    const data = await resend.emails.send({
+    const emailForMeContent = EmailForMe({ name, email, message });
+    const messageUsEmailContent = MessageUsEmail({ name });
+
+    const data1 = await resend.emails.send({
       from: "A.A.A  <abdo@abdalrahman.tech>",
       to: [`${process.env.NEXT_PUBLIC_RESEND_TO_EMAIL}`],
       subject: `Message from your Portfolio.`,
-      react: EmailForMe({ name, email, message }),
+      react: emailForMeContent,
     });
 
-    await resend.emails.send({
+    const data2 = await resend.emails.send({
       from: "A.A.A  <abdo@abdalrahman.tech>",
       to: [`${email}`],
-      subject: `Abdalrahman From HireQ`,
-      react: MessageUsEmail({ name }),
+      subject: `Abdelrahman From HireQ`,
+      react: messageUsEmailContent,
     });
 
-    return NextResponse.json(data);
+    return NextResponse.json({ data1, data2 });
   } catch (error) {
     console.error("Error sending message:", error);
     return NextResponse.json({ error: "Failed to send message." });

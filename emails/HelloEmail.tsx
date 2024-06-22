@@ -1,31 +1,41 @@
 import {
   Body,
-  Button,
   Container,
   Column,
   Head,
   Heading,
   Html,
+  Img,
   Preview,
   Row,
   Section,
   Text,
 } from "@react-email/components";
-import Link from "next/link";
 import * as React from "react";
 
-interface YelpRecentLoginEmailProps {
+interface MessageUsEmailProps {
   name: string;
 }
 
-export const YelpRecentLoginEmail = ({ name }: YelpRecentLoginEmailProps) => {
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+export const MessageUsEmail = ({ name }: MessageUsEmailProps) => {
   return (
     <Html>
       <Head />
-      <Preview>Yelp recent login</Preview>
+      <Preview>Welcome to {`Abdelrahman's`} Portfolio</Preview>
       <Body style={main}>
         <Container>
           <Section style={content}>
+            <Row>
+              <Img
+                style={image}
+                width={620}
+                src={`https://abdalrahman.tech/opengraph-image.png`}
+                alt="Header Image"
+              />
+            </Row>
+
             <Row style={{ ...boxInfos, paddingBottom: "0" }}>
               <Column>
                 <Heading
@@ -44,25 +54,28 @@ export const YelpRecentLoginEmail = ({ name }: YelpRecentLoginEmailProps) => {
                     fontWeight: "bold",
                     textAlign: "center",
                   }}
-                ></Heading>
-              </Column>
-            </Row>
-            <Row style={boxInfos}>
-              <Column>
-                <Text style={{ textAlign: "center" }}>
-                  {
-                    "I'm Happy to see you again, I hope you are doing well. I'm here to help you with anything you need."
-                  }
+                >
+                  Welcome to my personal portfolio!
+                </Heading>
+
+                <Text style={paragraph}>
+                  {`I'm`} Abdelrahman, a Business Administration student from
+                  Ain Shams University, passionate about web development and
+                  entrepreneurship. {`I’m`} excited to share my journey and
+                  projects with you.
+                </Text>
+                <Text style={{ ...paragraph, marginTop: -5 }}>
+                  Explore my portfolio to see the latest projects {`I've`} been
+                  working on, read my blog for insights on business and coding,
+                  and get in touch if {`you'd`} like to collaborate!
                 </Text>
               </Column>
             </Row>
             <Row style={{ ...boxInfos, paddingTop: "0" }}>
-              <Column style={containerButton} colSpan={2}>
-                <Link href="https://abdalrahman.tech/blog">
-                  <p style={{ textDecoration: "none" }}>
-                    <Button style={button}>See the Latest Posts</Button>
-                  </p>
-                </Link>
+              <Column style={section} colSpan={2}>
+                <a style={button} href={`${baseUrl}/blog`}>
+                  Read My Blog
+                </a>
               </Column>
             </Row>
           </Section>
@@ -81,7 +94,7 @@ export const YelpRecentLoginEmail = ({ name }: YelpRecentLoginEmailProps) => {
   );
 };
 
-export default YelpRecentLoginEmail;
+export default MessageUsEmail;
 
 const main = {
   backgroundColor: "#fff",
@@ -89,14 +102,8 @@ const main = {
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
 };
 
-const logo = {
-  padding: "30px 20px",
-};
-
-const containerButton = {
-  display: "flex",
-  justifyContent: "center",
-  width: "100%",
+const paragraph = {
+  fontSize: 16,
 };
 
 const button = {
@@ -107,6 +114,8 @@ const button = {
   border: "1px solid rgb(0,0,0, 0.1)",
   cursor: "pointer",
   padding: "12px 30px",
+  textDecoration: "none",
+  display: "inline-block",
 };
 
 const content = {
@@ -123,6 +132,9 @@ const boxInfos = {
   padding: "20px",
 };
 
-const containerImageFooter = {
-  padding: "45px 0 0 0",
+const section = {
+  padding: "24px",
+  border: "solid 1px #dedede",
+  borderRadius: "5px",
+  textAlign: "center" as const,
 };
