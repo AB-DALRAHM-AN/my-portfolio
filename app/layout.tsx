@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     twitter: {
     card: "summary_large_image",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://abdalrahman.tech/opengraph-image.png",
+    siteName: "Abdal Rahman",
+  },
 };
 
 export default function RootLayout({
