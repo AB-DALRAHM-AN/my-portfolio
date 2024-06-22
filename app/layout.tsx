@@ -41,10 +41,10 @@ export default function RootLayout({
         content="https://abdalrahman.tech/opengraph-image.png"
         property="og:image"
       />
-      <body className={`${inter.className} Dark-Light-theme`}>
+      <body className={`${inter.className} dark`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme=""
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
