@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.Dark-Light-theme {
+.light .Light-theme {
   --background: 0 0% 100%; /* White background */
   --foreground: 222.2 84% 4.9%; /* Dark gray text */
   --card: 0 0% 98%; /* Light gray card background */
@@ -25,7 +25,7 @@
   --radius: 0.5rem; /* Border radius */
 }
 
-.dark .Dark-Light-theme {
+.dark .Dark-theme {
   --background: 0 0% 3%; /* Very dark background */
   --foreground: 0 0% 98%; /* Almost white text */
   --card: 0 0% 15%; /* Dark card background */
@@ -46,7 +46,6 @@
   --input: 0 0% 15%; /* Dark input fields */
   --ring: 140 70% 45%; /* Bright green focus ring */
 }
-
 
 @layer base {
   * {
