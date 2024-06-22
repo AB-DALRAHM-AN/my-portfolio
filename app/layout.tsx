@@ -9,9 +9,15 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Abdal Rahman - Software Engineer",
+  title: {
+    default: "Abdal Rahman - Software Engineer",
+    template: `%s | Abdal Rahman`,
+  },
   description:
     "I'm a self-taught developer with an interest in Computer Science.",
+    twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +30,7 @@ export default function RootLayout({
       <body className={`${inter.className} Dark-Light-theme`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme=''
+          defaultTheme=""
           enableSystem
           disableTransitionOnChange
         >

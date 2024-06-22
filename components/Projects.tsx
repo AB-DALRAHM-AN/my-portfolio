@@ -8,8 +8,6 @@ export const revalidate = 10;
 
 export default async function Projects() {
   const projects = await fetchProjects();
-  console.log("Fetched projects:", projects);
-
   const latestProjects = projects.length > 0 ? projects.slice(0, 2) : [];
 
   return (

@@ -6,6 +6,24 @@ import {
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
+import { describe } from "node:test";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const posts: any = await fetchBlogBySlug(params.slug);
+  if (!posts) {
+    return {
+      title: "Projects not found",
+    };
+  }
+  return {
+    title: posts.properties.Title.title[0].plain_text,
+    description: posts.properties.description?.rich_text[0]?.plain_text,
+  };
+}
 
 export default async function PostsPage({
   params,
