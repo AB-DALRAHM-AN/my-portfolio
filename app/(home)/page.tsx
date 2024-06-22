@@ -4,7 +4,9 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Blog from "@/components/Blog";
 
-async function Home() {
+export const revalidate = 10;
+
+export default function Home() {
   return (
     <section>
       <Hero />
@@ -15,5 +17,3 @@ async function Home() {
     </section>
   );
 }
-
-export default Home;

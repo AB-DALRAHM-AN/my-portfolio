@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react";
 import { fetchProjects } from "@/lib/notionProjects";
 import { ProjectCard } from "./ProjectCard";
 
-export const revalidate = 3600 * 24;
+export const revalidate = 10;
 
 export default async function Projects() {
   const projects = await fetchProjects();
