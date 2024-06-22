@@ -20,22 +20,6 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: process.env.NEXT_PUBLIC_BASE_URL,
-    title: "Abdal Rahman - Software Engineer",
-    description:
-      "I'm a self-taught developer with an interest in Computer Science.",
-    images: [
-      {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/opengraph-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Abdal Rahman",
-      },
-    ],
-  },
 };
 
 export default function RootLayout({
@@ -45,6 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta
+        content="https://abdalrahman.tech/opengraph-image.png"
+        property="og:image"
+      />
+      <meta
+        content="https://abdalrahman.tech/opengraph-image.png"
+        property="twitter:image"
+      />
       <body className={`${inter.className} Dark-Light-theme`}>
         <ThemeProvider
           attribute="class"
