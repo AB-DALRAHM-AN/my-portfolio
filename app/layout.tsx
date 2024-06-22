@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     "I'm a self-taught developer with an interest in Computer Science.",
   twitter: {
     card: "summary_large_image",
+    site: "@abdalrahman.tech",
+    creator: "@A.A.A",
+    images: [
+      {
+        url: "https://abdalrahman.tech/opengraph-image.png",
+        alt: "Abdal Rahman - Software Engineer",
+      },
+    ],
   },
 };
 
@@ -32,10 +40,6 @@ export default function RootLayout({
       <meta
         content="https://abdalrahman.tech/opengraph-image.png"
         property="og:image"
-      />
-      <meta
-        content="https://abdalrahman.tech/opengraph-image.png"
-        property="twitter:image"
       />
       <body className={`${inter.className} Dark-Light-theme`}>
         <ThemeProvider
