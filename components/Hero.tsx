@@ -59,17 +59,17 @@ const Hero = () => {
         <SocialButton
           icon={<GithubIcon className="text-primary" />}
           text="Github"
-          href={GithubUrl}
+          href="https://github.com/AB-DALRAHM-AN"
         />
         <SocialButton
           icon={<LinkedinIcon className="text-primary" />}
           text="LinkedIn"
-          href={LinkedInUrl}
+          href="https://www.linkedin.com/in/ab-dalrhm-an/"
         />
         <SocialButton
           icon={<File className="text-primary" />}
           text="Resume"
-          href={ResumeUrl}
+          href="https://drive.google.com/file/d/1DydCBUFLPRu63OiOr-IBduIzNzLkLlOA/view?usp=drive_link"
         />
       </div>
     </section>
