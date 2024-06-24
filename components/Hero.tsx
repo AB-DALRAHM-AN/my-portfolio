@@ -16,6 +16,9 @@ const ubuntu = Ubuntu({
 });
 
 const Hero = () => {
+  const LinkedInUrl = process.env.NEXT_PUBLIC_LINKEDIN_URL;
+  const ResumeUrl = process.env.NEXT_PUBLIC_RESUME_URL;
+  const GithubUrl = process.env.NEXT_PUBLIC_GITHUB_URL;
   return (
     <section className="flex flex-col justify-start md:gap-8 gap-5 items-start mx-10 mt-20 mb-32 md:mx-40 md:my-32">
       <div className="flex flex-col relative">
@@ -56,17 +59,17 @@ const Hero = () => {
         <SocialButton
           icon={<GithubIcon className="text-primary" />}
           text="Github"
-          href="https://github.com/AB-DALRAHM-AN"
+          href={GithubUrl}
         />
         <SocialButton
           icon={<LinkedinIcon className="text-primary" />}
           text="LinkedIn"
-          href="https://www.linkedin.com/in/ab-dalrhm-an/"
+          href={LinkedInUrl}
         />
         <SocialButton
           icon={<File className="text-primary" />}
           text="Resume"
-          href="https://drive.google.com/file/d/1HSeJWfcni_NKPHiIjiqjgIY5yRxVsmnJ/view?usp=drive_link"
+          href={ResumeUrl}
         />
       </div>
     </section>

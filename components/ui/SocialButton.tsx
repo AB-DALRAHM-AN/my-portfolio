@@ -4,7 +4,7 @@ import { Button } from "./button";
 interface SocialButtonProps {
   icon: any;
   text: string;
-  href: string;
+  href: string | any;
 }
 
 const SocialButton = ({
