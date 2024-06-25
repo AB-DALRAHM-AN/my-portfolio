@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import {
   SiExpress,
+  SiFirebase,
   SiMongodb,
   SiTailwindcss,
   SiTypescript,
@@ -91,17 +92,42 @@ const Technologies = ({ techs }: { techs: string[] }) => {
               </span>
             )}
             {tech === "express.js" && (
-              <span className="flex justify-center items-center gap-1 ">
+              <span className="flex justify-center items-center gap-1">
                 <SiExpress />
                 <span>Express.js</span>
               </span>
             )}
-            {tech && (
-              <span className="flex justify-center items-center gap-1">
-                <span>{tech}</span>
+            {tech === "firebase" && (
+              <span className="flex justify-center items-center gap-1 text-yellow-500">
+                <SiFirebase className="text-yellow-500" />
+                <span>Firebase</span>
               </span>
             )}
-            {!tech && tech}
+            {tech === "notion" && (
+              <span className="flex justify-center items-center gap-1 text-gray-500">
+                <span>Notion</span>
+              </span>
+            )}
+            {tech === "figma" && (
+              <span className="flex justify-center items-center gap-1 text-red-500">
+                <span>Figma</span>
+              </span>
+            )}
+            {tech === "shadcn" && (
+              <span className="flex justify-center items-center gap-1">
+                <span>Shadcn</span>
+              </span>
+            )}
+            {tech === "ai" && (
+              <span className="flex justify-center items-center gap-1">
+                <span>AI</span>
+              </span>
+            )}
+            {tech === "gemini" && (
+              <span className="flex justify-center items-center gap-1 text-blue-600">
+                <span>Gemini</span>
+              </span>
+            )}
           </span>
         );
       })}
