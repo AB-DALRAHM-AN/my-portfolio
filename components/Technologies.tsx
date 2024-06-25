@@ -96,6 +96,12 @@ const Technologies = ({ techs }: { techs: string[] }) => {
                 <span>Express.js</span>
               </span>
             )}
+            {tech && (
+              <span className="flex justify-center items-center gap-1">
+                <span>{tech}</span>
+              </span>
+            )}
+            {!tech && tech}
           </span>
         );
       })}
