@@ -9,7 +9,6 @@ import bookmarkPlugin from "@notion-render/bookmark-plugin";
 
 export const revalidate = 10;
 
-
 export async function generateMetadata({
   params,
 }: {
@@ -49,7 +48,7 @@ export default async function PostsPage({
 
   return (
     <div
-      className="prose m-10 md:mx-auto select-none dark:prose-headings:text-white dark:prose:text-gray-300 dark:prose-a:text-blue-300 dark:prose-strong:text-white dark:prose-em:text-white dark:prose-blockquote:text-white dark:prose-hr:border-gray-800 dark:prose-table:border-gray-800 dark:prose-code:text-white dark:prose-p:text-muted-foreground dark:prose-ol:text-muted-foreground dark:prose-ul:text-muted-foreground dark:prose-li:text-muted-foreground dark:prose-img:shadow-md dark:prose-img:rounded-lg dark:prose-img:overflow-hidden"
+      className="prose m-10 md:mx-auto dark:prose-headings:text-white dark:prose:text-gray-300 dark:prose-a:text-blue-300 dark:prose-strong:text-white dark:prose-em:text-white dark:prose-blockquote:text-white dark:prose-hr:border-gray-800 dark:prose-table:border-gray-800 dark:prose-code:text-white dark:prose-p:text-muted-foreground dark:prose-ol:text-muted-foreground dark:prose-h2:text-card-foreground dark:prose-h1:text-card-foreground dark:prose-h3:text-muted-foreground dark:prose-ul:text-muted-foreground dark:prose-li:text-muted-foreground dark:prose-img:shadow-md dark:prose-img:rounded-lg dark:prose-img:overflow-hidden dark:prose-code:text-muted-foreground"
       dangerouslySetInnerHTML={{ __html: html }}
     ></div>
   );
