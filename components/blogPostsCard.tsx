@@ -18,7 +18,7 @@ const blogPostsCard = ({
   postLink,
 }: BlogPostsCardProps) => {
   return (
-    <div className="flex justify-between items-start gap-8">
+    <div className="md:flex-row flex-col flex justify-between items-start gap-8">
       <div className="flex flex-col gap-1 justify-between text-muted-foreground">
         <p className="text-muted-foreground">{date}</p>
         <p className="text-muted-foreground">{readTime}</p>

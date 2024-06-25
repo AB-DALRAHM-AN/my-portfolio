@@ -16,12 +16,13 @@ import { NavItems } from "@/data/NavLinks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import BackgroundGrid from "./ui/grid";
 
 const Header = () => {
   const pathname = usePathname();
 
   return (
-    <section className="mx-10 md:mx-20 sticky top-5 rounded-3xl z-50 border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <section className="mx-10 md:mx-20 sticky top-5 rounded-3xl z-50 border-border/40 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/50">
       <div className="flex justify-between items-center w-full gap-5 py-4 md:px-20 px-10 rounded-3xl border-2 mt-5">
         <Link href="/">
           <Logo />
@@ -36,10 +37,8 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent side={"top"}>
             <SheetHeader className="mb-10">
-              <SheetTitle className="text-3xl mt-10">
-                <Link href="/">
-                  Abdelrahman Ahmed<span className="text-primary">Ali</span>
-                </Link>
+              <SheetTitle className="text-3xl mt-10 mx-auto">
+                <Logo />
               </SheetTitle>
               <SheetDescription>
                 Start a conversation{" "}
