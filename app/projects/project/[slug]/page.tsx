@@ -7,6 +7,8 @@ import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
 
+export const revalidate = 10;
+
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const projects: any = await fetchProjectsBySlug(params.slug);
   if (!projects) {

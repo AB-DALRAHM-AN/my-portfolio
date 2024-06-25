@@ -6,7 +6,9 @@ import {
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
-import { describe } from "node:test";
+
+export const revalidate = 10;
+
 
 export async function generateMetadata({
   params,
