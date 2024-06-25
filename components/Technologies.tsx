@@ -1,3 +1,4 @@
+import { Brain } from "lucide-react";
 import {
   FaCss3,
   FaHtml5,
@@ -119,7 +120,8 @@ const Technologies = ({ techs }: { techs: string[] }) => {
               </span>
             )}
             {tech === "ai" && (
-              <span className="flex justify-center items-center gap-1">
+              <span className="flex justify-center items-center gap-1 text-blue-600">
+                <Brain className="text-blue-500" />
                 <span>AI</span>
               </span>
             )}
