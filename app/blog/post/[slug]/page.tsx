@@ -6,6 +6,9 @@ import {
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
+import SectionBlog from "@/components/SectionBlog";
+import Image from "next/image";
+import MyPhoto from "@/public/Me.jpg";
 
 export const revalidate = 10;
 
@@ -31,7 +34,16 @@ export default async function PostsPage({
 }: {
   params: { slug: string };
 }) {
-  const post = await fetchBlogBySlug(params.slug);
+  const post: any = await fetchBlogBySlug(params.slug);
+  const readingTime =
+    post.properties.readTime?.rich_text[0]?.plain_text || "N/A";
+  const date = post.properties.date?.created_time
+    ? new Date(post.properties.date.created_time).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : null;
   if (!post) {
     return <div>Post not found</div>;
   }
@@ -47,9 +59,33 @@ export default async function PostsPage({
   const html = await renderer.render(...content);
 
   return (
-    <div
-      className="prose m-10 md:mx-auto dark:prose-headings:text-white dark:prose:text-gray-300 dark:prose-a:text-blue-300 dark:prose-strong:text-white dark:prose-em:text-white dark:prose-blockquote:text-white dark:prose-hr:border-gray-800 dark:prose-table:border-gray-800 dark:prose-code:text-white dark:prose-p:text-muted-foreground dark:prose-ol:text-muted-foreground dark:prose-h2:text-card-foreground dark:prose-h1:text-card-foreground dark:prose-h3:text-muted-foreground dark:prose-ul:text-muted-foreground dark:prose-li:text-muted-foreground dark:prose-img:shadow-md dark:prose-img:rounded-lg dark:prose-img:overflow-hidden dark:prose-code:text-muted-foreground"
-      dangerouslySetInnerHTML={{ __html: html }}
-    ></div>
+    <div className="mx-auto select-none my-10 p-6">
+      <div className="w-fit mx-auto">
+        <SectionBlog>
+          <div className="flex flex-col gap-3 justify-start">
+            <h1 className="text-4xl font-bold">
+              {post.properties.Title?.title[0]?.plain_text}
+            </h1>
+            <div className="flex gap-1 ml-5 items-center justify-start text-muted-foreground">
+              <Image
+                src={MyPhoto}
+                alt="author"
+                width={30}
+                height={30}
+                className="rounded-full"
+              />
+              <p className="text-muted-foreground">{date}</p>.
+              <p className="text-muted-foreground">{readingTime}</p>
+            </div>
+          </div>
+        </SectionBlog>
+        <SectionBlog>
+          <div
+            className="prose m-10 md:mx-auto select-none dark:prose-headings:text-white dark:prose:text-gray-300 dark:prose-a:text-blue-300 dark:prose-strong:text-white dark:prose-em:text-white dark:prose-blockquote:text-white dark:prose-hr:border-gray-800 dark:prose-table:border-gray-800 dark:prose-code:text-muted-foreground dark:prose-p:text-muted-foreground dark:prose-ol:text-muted-foreground dark:prose-h2:text-card-foreground dark:prose-h1:text-card-foreground dark:prose-h3:text-muted-foreground dark:prose-ul:text-muted-foreground dark:prose-li:text-muted-foreground dark:prose-img:shadow-md dark:prose-img:rounded-lg dark:prose-img:overflow-hidden"
+            dangerouslySetInnerHTML={{ __html: html }}
+          ></div>
+        </SectionBlog>
+      </div>
+    </div>
   );
 }
