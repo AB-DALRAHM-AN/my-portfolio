@@ -26,12 +26,12 @@ const blogPostsCard = ({
       <div className="flex flex-col gap-1 justify-between">
         <h2 className="text-xl font-bold">{title}</h2>
         <p className="text-muted-foreground">{description}</p>
-        <div className="flex justify-start gap-2 text-primary items-center">
-          <Link href={postLink}>
+        <Link href={postLink}>
+          <div className="flex justify-start items-start text-primary gap-2">
             <span className="text-primary font-semibold">Read more</span>
             <ExternalLink size={20} />
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </div>
   );
