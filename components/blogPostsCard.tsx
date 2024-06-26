@@ -29,8 +29,8 @@ const blogPostsCard = ({
         <div className="flex justify-start gap-2 text-primary items-center">
           <Link href={postLink}>
             <span className="text-primary font-semibold">Read more</span>
+            <ExternalLink size={20} />
           </Link>
-          <ExternalLink size={20} />
         </div>
       </div>
     </div>
