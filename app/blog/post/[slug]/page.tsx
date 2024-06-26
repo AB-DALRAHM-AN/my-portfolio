@@ -6,7 +6,6 @@ import {
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
-import SecitonSlug from "@/components/SectionSlug";
 import Image from "next/image";
 import MyPhoto from "@/public/Me.jpg";
 
