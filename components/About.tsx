@@ -13,26 +13,26 @@ const About = () => {
       <div className="flex flex-col-reverse justify-start items-center md:flex-row gap-10 md:gap-20">
         <div className="flex flex-col gap-5 justify-start items-start md:w-1/2">
           <span>
-            Hey! {`I'm`} Abdelrahman, and {`I've`} been close to a computer since an early age,
-            and passionate about it ever since.
+            Hey! {`I'm`} Abdelrahman, and {`I've`} been close to a computer
+            since an early age, and passionate about it ever since.
           </span>
           <span>
             I really enjoyed building stuff using{" "}
             <span className="text-primary">no-code tools</span> back in 2018.
             From there, I explored coding myself. Fast-forward to today, I
             program in various languages and technologies and had the privilege
-            to work{" "}
-            <span className="text-primary"></span> and at{" "}
-            <span className="text-primary">Company</span>. {`I'm`} interested
-            in building something awesome with code and automating tasks,
-            currently focusing on{" "}
+            to work <span className="text-primary"></span> and at{" "}
+            <span className="text-primary">Company</span>. {`I'm`} interested in
+            building something awesome with code and automating tasks, currently
+            focusing on{" "}
             <span className="text-primary">
               Web Development, Open Source, and Competitive Programming
             </span>
             .
           </span>
           <span>
-            When {`I'm`} not coding, I play games with my friends, or if the {`weather's`} good, play football! 🏀
+            When {`I'm`} not coding, I play games with my friends, or if the{" "}
+            {`weather's`} good, play football! 🏀
           </span>
         </div>
         <div className="flex justify-center items-center w-1/2">
