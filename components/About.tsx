@@ -32,8 +32,7 @@ const About = () => {
             .
           </span>
           <span>
-            When {`I'm`} not coding, I play games with my friends, watch shows on
-            Netflix, or if the {`weather's`} good, play football! 🏀
+            When {`I'm`} not coding, I play games with my friends, or if the {`weather's`} good, play football! 🏀
           </span>
         </div>
         <div className="flex justify-center items-center w-1/2">
