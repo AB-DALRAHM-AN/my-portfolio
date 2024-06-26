@@ -6,7 +6,7 @@ import {
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
-import SectionBlog from "@/components/SectionBlog";
+import SecitonSlug from "@/components/SectionSlug";
 import Image from "next/image";
 import MyPhoto from "@/public/Me.jpg";
 
@@ -61,31 +61,26 @@ export default async function PostsPage({
   return (
     <div className="mx-auto select-none my-10 p-6">
       <div className="w-fit mx-auto">
-        <SectionBlog>
-          <div className="flex flex-col gap-3 justify-start">
-            <h1 className="text-4xl font-bold">
-              {post.properties.Title?.title[0]?.plain_text}
-            </h1>
-            <div className="flex gap-1 ml-5 items-center justify-start text-muted-foreground">
-              <Image
-                src={MyPhoto}
-                alt="author"
-                width={30}
-                height={30}
-                className="rounded-full"
-              />
-              <p className="text-muted-foreground">{date}</p>.
-              <p className="text-muted-foreground">{readingTime}</p>
-            </div>
-          </div>
-        </SectionBlog>
-        <SectionBlog>
-          <div
-            className="prose m-10 md:mx-auto select-none dark:prose-headings:text-white dark:prose:text-gray-300 dark:prose-a:text-blue-300 dark:prose-strong:text-white dark:prose-em:text-white dark:prose-blockquote:text-white dark:prose-hr:border-gray-800 dark:prose-table:border-gray-800 dark:prose-code:text-muted-foreground dark:prose-p:text-muted-foreground dark:prose-ol:text-muted-foreground dark:prose-h2:text-card-foreground dark:prose-h1:text-card-foreground dark:prose-h3:text-muted-foreground dark:prose-ul:text-muted-foreground dark:prose-li:text-muted-foreground dark:prose-img:shadow-md dark:prose-img:rounded-lg dark:prose-img:overflow-hidden"
-            dangerouslySetInnerHTML={{ __html: html }}
-          ></div>
-        </SectionBlog>
+        <h1 className="text-4xl font-bold mb-3">
+          {post.properties.Title?.title[0]?.plain_text}
+        </h1>
+        <div className="flex gap-1 ml-5 items-center justify-start text-muted-foreground">
+          <Image
+            src={MyPhoto}
+            alt="author"
+            width={30}
+            height={30}
+            className="rounded-full"
+          />
+          <p className="text-muted-foreground">{date}</p>.
+          <p className="text-muted-foreground">{readingTime}</p>
+        </div>
       </div>
+
+      <div
+        className="prose m-10 md:mx-auto select-none dark:prose-headings:text-white dark:prose:text-gray-300 dark:prose-a:text-blue-300 dark:prose-strong:text-white dark:prose-em:text-white dark:prose-blockquote:text-white dark:prose-hr:border-gray-800 dark:prose-table:border-gray-800 dark:prose-code:text-muted-foreground dark:prose-p:text-muted-foreground dark:prose-ol:text-muted-foreground dark:prose-h2:text-card-foreground dark:prose-h1:text-card-foreground dark:prose-h3:text-muted-foreground dark:prose-ul:text-muted-foreground dark:prose-li:text-muted-foreground dark:prose-img:shadow-md dark:prose-img:rounded-lg dark:prose-img:overflow-hidden"
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></div>
     </div>
   );
 }
