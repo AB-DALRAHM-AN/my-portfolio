@@ -13,28 +13,27 @@ const About = () => {
       <div className="flex flex-col-reverse justify-start items-center md:flex-row gap-10 md:gap-20">
         <div className="flex flex-col gap-5 justify-start items-start md:w-1/2">
           <span>
-            Hey! {`I'm`} Abdul Rahman, {`I've`} been close to a computer since
-            an early age, and been passionate about it ever since.
+            Hey! {`I'm`} Abdelrahman, and {`I've`} been close to a computer since an early age,
+            and passionate about it ever since.
           </span>
           <span>
-            I really liked to build stuff using{" "}
-            <span className="text-primary">no-code tools</span> back in 2010,
-            and from that, I explored how to code myself, fast-forward to today,
-            I do programming in various languages and technologies, and had the
-            privilege to worked in a{" "}
-            <span className="text-primary">Recruitment Company</span>and a{" "}
-            <span className="text-primary">SaaS Company</span>
-            {`I'm`}
-            interested in building something awesome with code and automate
-            tasks with code, currently focused on{" "}
+            I really enjoyed building stuff using{" "}
+            <span className="text-primary">no-code tools</span> back in 2018.
+            From there, I explored coding myself. Fast-forward to today, I
+            program in various languages and technologies and had the privilege
+            to work{" "}
+            <span className="text-primary"></span> and at{" "}
+            <span className="text-primary">Company</span>. {`I'm`} interested
+            in building something awesome with code and automating tasks,
+            currently focusing on{" "}
             <span className="text-primary">
-              Web & Mobile Development, Open Source and Competitive Programming
+              Web Development, Open Source, and Competitive Programming
             </span>
             .
           </span>
           <span>
-            When {`I'm`} not coding I play games with my friends, watch some
-            show on Netflix, or if the {`weather's`} good, play basketball! 🏀
+            When {`I'm`} not coding, I play games with my friends, watch shows on
+            Netflix, or if the {`weather's`} good, play football! 🏀
           </span>
         </div>
         <div className="flex justify-center items-center w-1/2">
