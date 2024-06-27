@@ -27,12 +27,14 @@ export async function POST(req: NextRequest) {
       react: messageUsEmailContent,
     });
 
+    const audienceId = `${process.env.NEXT_PUBLIC_RESEND_AUDIENCE_ID}`;
+
     resend.contacts.create({
       email: email,
       firstName: name.split(" ")[0],
       lastName: name.split(" ")[1] || "",
       unsubscribed: false,
-      audienceId: `b4dccf2d-fe58-46d6-89de-68c571fcffd1`,
+      audienceId: audienceId,
     });
 
     return NextResponse.json({ data1, data2 });
