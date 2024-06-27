@@ -73,7 +73,7 @@ export const MessageUsEmail = ({ name }: MessageUsEmailProps) => {
             </Row>
             <Row style={{ ...boxInfos, paddingTop: "0" }}>
               <Column style={section} colSpan={2}>
-                <a style={button} href={`${baseUrl}/blog`}>
+                <a style={button} href={`https://abdalrahman.tech/blog`}>
                   Read My Blog
                 </a>
               </Column>
