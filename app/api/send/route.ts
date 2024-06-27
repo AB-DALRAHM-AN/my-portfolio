@@ -27,6 +27,14 @@ export async function POST(req: NextRequest) {
       react: messageUsEmailContent,
     });
 
+    resend.contacts.create({
+      email: email,
+      firstName: name.split(" ")[0],
+      lastName: name.split(" ")[1] || "",
+      unsubscribed: false,
+      audienceId: `b4dccf2d-fe58-46d6-89de-68c571fcffd1`,
+    });
+
     return NextResponse.json({ data1, data2 });
   } catch (error) {
     console.error("Error sending message:", error);
