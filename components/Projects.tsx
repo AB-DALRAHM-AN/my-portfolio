@@ -45,7 +45,7 @@ export default async function Projects() {
               project.properties.liveLink?.rich_text[0].plain_text || "";
             const githubLink =
               project.properties.githubLink?.rich_text[0].plain_text || "";
-            const projectPage = `/projects/project/${
+            const projectPage = `/projects/${
               project.properties.slug?.rich_text[0].plain_text || ""
             }`;
 

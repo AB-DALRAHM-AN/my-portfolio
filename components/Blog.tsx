@@ -38,7 +38,7 @@ export default async function LatestPosts() {
 
           return (
             <Link
-              href={`/blog/post/${post.properties.slug.rich_text[0].plain_text}`}
+              href={`/blog/${post.properties.slug.rich_text[0].plain_text}`}
               passHref
               key={post.id}
             >

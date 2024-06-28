@@ -23,7 +23,7 @@ export default async function ProjectsPage() {
             project.properties.liveLink?.rich_text[0].plain_text || "";
           const githubLink =
             project.properties.githubLink.rich_text[0].plain_text || "";
-          const projectPage = `/projects/project/${project.properties.slug.rich_text[0].plain_text}`;
+          const projectPage = `/projects/${project.properties.slug.rich_text[0].plain_text}`;
 
           return (
             <ProjectCard

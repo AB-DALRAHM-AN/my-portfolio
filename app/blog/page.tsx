@@ -32,7 +32,7 @@ export default async function BlogPage() {
               readTime={readingTime}
               title={post.properties.Title.title[0].plain_text}
               description={post.properties.description.rich_text[0].plain_text}
-              postLink={`/blog/post/${post.properties.slug.rich_text[0].plain_text}`}
+              postLink={`/blog/${post.properties.slug.rich_text[0].plain_text}`}
             />
           );
         })}
