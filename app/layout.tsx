@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: `%s | Abdal Rahman`,
   },
   description:
-    "I'm a self-taught developer with an interest in Computer Science.",
+    "Abdal Rahman is a highly skilled self-taught software engineer specializing in full-stack development, proficient in JavaScript, TypeScript, React and Nextjs. With a strong background in Computer Science, Abdalrahman has developed innovative web applications, contributed to ai and open-source projects, and solved complex technical challenges. Explore his portfolio to see his latest projects and achievements.",
   twitter: {
     card: "summary_large_image",
     site: "@abdalrahman.tech",
