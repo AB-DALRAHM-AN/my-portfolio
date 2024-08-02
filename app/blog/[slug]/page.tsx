@@ -58,8 +58,8 @@ export default async function PostsPage({
   const html = await renderer.render(...content);
 
   return (
-    <div className="mx-auto select-none my-10 p-6">
-      <div className="w-fit mx-auto">
+    <div className="mx-auto w-full select-none my-10 p-6">
+      <div className="w-3/4 mx-auto">
         <h1 className="text-4xl font-bold mb-3">
           {post.properties.Title?.title[0]?.plain_text}
         </h1>
@@ -76,10 +76,9 @@ export default async function PostsPage({
         </div>
       </div>
 
-      <div
-        className="prose m-10 md:mx-auto select-none dark:prose-headings:text-white dark:prose:text-gray-300 dark:prose-a:text-blue-300 dark:prose-strong:text-white dark:prose-em:text-white dark:prose-blockquote:text-white dark:prose-hr:border-gray-800 dark:prose-table:border-gray-800 dark:prose-code:text-muted-foreground dark:prose-p:text-muted-foreground dark:prose-ol:text-muted-foreground dark:prose-h2:text-card-foreground dark:prose-h1:text-card-foreground dark:prose-h3:text-muted-foreground dark:prose-ul:text-muted-foreground dark:prose-li:text-muted-foreground dark:prose-img:shadow-md dark:prose-img:rounded-lg dark:prose-img:overflow-hidden"
-        dangerouslySetInnerHTML={{ __html: html }}
-      ></div>
+      <div className="prose my-10 w-[1000px] mx-auto dark:prose-headings:text-white dark:prose:text-gray-300 dark:prose-a:text-blue-300 dark:prose-strong:text-white dark:prose-em:text-white dark:prose-blockquote:text-white dark:prose-hr:border-gray-800 dark:prose-table:border-gray-800 dark:prose-code:text-muted-foreground dark:prose-p:text-muted-foreground dark:prose-ol:text-muted-foreground dark:prose-h2:text-card-foreground dark:prose-h1:text-card-foreground dark:prose-h3:text-muted-foreground dark:prose-ul:text-muted-foreground dark:prose-li:text-muted-foreground dark:prose-img:shadow-md dark:prose-img:rounded-lg dark:prose-img:overflow-hidden">
+        <span dangerouslySetInnerHTML={{ __html: html }}></span>
+      </div>
     </div>
   );
 }

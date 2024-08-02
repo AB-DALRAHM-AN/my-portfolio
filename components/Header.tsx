@@ -6,6 +6,7 @@ import { Logo } from "./Logo";
 import {
   Sheet,
   SheetTrigger,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -16,7 +17,6 @@ import { NavItems } from "@/data/NavLinks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import BackgroundGrid from "./ui/grid";
 
 const Header = () => {
   const pathname = usePathname();
@@ -54,17 +54,18 @@ const Header = () => {
               {NavItems.map((link, index) => {
                 const Icon = link.icon;
                 return (
-                  <Link
-                    key={index}
-                    href={link.href}
-                    className={cn(
-                      "flex items-center gap-3 text-xl px-3 py-2 rounded-md w-full hover:bg-secondary",
-                      pathname === link.href ? "bg-secondary" : ""
-                    )}
-                  >
-                    {Icon && <Icon className="w-6 h-6 mr-2" />}
-                    <p>{link.name}</p>
-                  </Link>
+                  <SheetClose asChild key={index}>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "flex items-center gap-3 text-xl px-3 py-2 rounded-md w-full hover:bg-secondary",
+                        pathname === link.href ? "bg-secondary" : ""
+                      )}
+                    >
+                      {Icon && <Icon className="w-6 h-6 mr-2" />}
+                      <p>{link.name}</p>
+                    </Link>
+                  </SheetClose>
                 );
               })}
             </div>
